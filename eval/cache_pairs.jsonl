@@ -1,0 +1,17 @@
+{"a":"How many casual leave days do I get?","b":"how many casual leave days do I get per year?","should_hit":true}
+{"a":"How many casual leave days do I get?","b":"Please tell me how many casual leave days I get","should_hit":true}
+{"a":"How many casual leave days do I get?","b":"How many days of casual leave do I get?","should_hit":true}
+{"a":"What is the hotel limit in Mumbai?","b":"Hotel limit in Mumbai?","should_hit":true}
+{"a":"Can I carry forward sick leave?","b":"can i carry forward sick leave","should_hit":true}
+{"a":"Can I carry forward sick leave?","b":"Can sick leave be carried forward?","should_hit":true}
+{"a":"How much paternity leave do new fathers get?","b":"How long is paternity leave?","should_hit":true}
+{"a":"How many casual leave days do I get?","b":"How many sick leave days do I get?","should_hit":false}
+{"a":"How many casual leave days do I get?","b":"How many earned leave days do I get?","should_hit":false}
+{"a":"How long is paternity leave?","b":"How long is maternity leave?","should_hit":false}
+{"a":"What is the salary band for L3?","b":"What is the salary band for L4?","should_hit":false}
+{"a":"What is the hotel limit in Mumbai?","b":"What is the hotel limit in Delhi?","should_hit":false}
+{"a":"Can I carry forward sick leave?","b":"Can I carry forward earned leave?","should_hit":false}
+{"a":"Who approves international travel?","b":"Who approves domestic travel?","should_hit":false}
+{"a":"How many days a week do I work from office?","b":"How many days a week can I work from another city?","should_hit":false}
+{"a":"How much is the learning budget?","b":"How much is the wellness reimbursement?","should_hit":false}
+{"a":"How long does HR take to investigate a grievance?","b":"How long do I have to submit an expense claim?","should_hit":false}

@@ -1,0 +1,14 @@
+[
+  {"id": "E001", "name": "Asha Rao", "role": "employee", "department": "Engineering", "manager_id": "E002", "level": "L2",
+   "leave_balance": {"earned": 11, "casual": 5, "sick": 8}},
+  {"id": "E002", "name": "Ravi Menon", "role": "manager", "department": "Engineering", "manager_id": null, "level": "L4",
+   "leave_balance": {"earned": 16, "casual": 3, "sick": 10}},
+  {"id": "E003", "name": "Meera Iyer", "role": "hr", "department": "People Ops", "manager_id": null, "level": "L4",
+   "leave_balance": {"earned": 9, "casual": 6, "sick": 7}},
+  {"id": "E004", "name": "Karan Shah", "role": "employee", "department": "Sales", "manager_id": "E005", "level": "L2",
+   "leave_balance": {"earned": 4, "casual": 2, "sick": 10}},
+  {"id": "E005", "name": "Priya Nair", "role": "manager", "department": "Sales", "manager_id": null, "level": "L4",
+   "leave_balance": {"earned": 13, "casual": 8, "sick": 9}},
+  {"id": "E006", "name": "Dev Patel", "role": "employee", "department": "Engineering", "manager_id": "E002", "level": "L1",
+   "leave_balance": {"earned": 2, "casual": 7, "sick": 10}}
+]

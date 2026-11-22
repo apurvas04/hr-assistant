@@ -1,0 +1,50 @@
+{"id": "q01", "category": "direct", "question": "How many casual leave days do I get?", "expected_doc": "leave-policy", "expected_section": "Types of leave", "answer_contains": ["8"]}
+{"id": "q02", "category": "direct", "question": "How many earned leave days do I get per year?", "expected_doc": "leave-policy", "expected_section": "Types of leave", "answer_contains": ["18"]}
+{"id": "q03", "category": "direct", "question": "Do I need a medical certificate for sick leave?", "expected_doc": "leave-policy", "expected_section": "Types of leave", "answer_contains": ["2"]}
+{"id": "q04", "category": "direct", "question": "Can I carry forward sick leave?", "expected_doc": "leave-policy", "expected_section": "Carry forward and encashment", "answer_contains": ["31 March"]}
+{"id": "q05", "category": "direct", "question": "How many earned leave days can I carry forward?", "expected_doc": "leave-policy", "expected_section": "Carry forward and encashment", "answer_contains": ["10"]}
+{"id": "q06", "category": "paraphrase", "question": "Can I cash out my unused leave at year end?", "expected_doc": "leave-policy", "expected_section": "Carry forward and encashment", "answer_contains": ["5"]}
+{"id": "q07", "category": "direct", "question": "How many public holidays does the company have?", "expected_doc": "leave-policy", "expected_section": "Public holidays", "answer_contains": ["12"]}
+{"id": "q08", "category": "direct", "question": "How far in advance do I need to apply for planned leave?", "expected_doc": "leave-policy", "expected_section": "How to apply", "answer_contains": ["3"]}
+{"id": "q09", "category": "paraphrase", "question": "I was ill and forgot to apply. Can I still apply for sick leave after returning?", "expected_doc": "leave-policy", "expected_section": "How to apply", "answer_contains": ["3"]}
+{"id": "q10", "category": "cross_section", "question": "I'm still on probation. Can I take earned leave?", "expected_doc": "leave-policy", "expected_section": "Probation", "answer_contains": []}
+{"id": "q11", "category": "direct", "question": "How many weeks of maternity leave do I get?", "expected_doc": "parental-leave", "expected_section": "Maternity leave", "answer_contains": ["26"]}
+{"id": "q12", "category": "direct", "question": "How much paternity leave do new fathers get?", "expected_doc": "parental-leave", "expected_section": "Paternity leave", "answer_contains": ["10"]}
+{"id": "q13", "category": "cross_section", "question": "Does parental leave reduce my casual leave balance?", "expected_doc": "parental-leave", "expected_section": "Overview", "answer_contains": []}
+{"id": "q14", "category": "direct", "question": "I am adopting a child. How much leave can I take?", "expected_doc": "parental-leave", "expected_section": "Adoption leave", "answer_contains": ["12"]}
+{"id": "q15", "category": "paraphrase", "question": "Can I work shorter hours when I come back from maternity leave?", "expected_doc": "parental-leave", "expected_section": "Returning to work", "answer_contains": ["4 weeks"]}
+{"id": "q16", "category": "direct", "question": "What is the health insurance cover amount?", "expected_doc": "benefits", "expected_section": "Health insurance", "answer_contains": ["5,00,000"]}
+{"id": "q17", "category": "direct", "question": "How much is the yearly learning budget?", "expected_doc": "benefits", "expected_section": "Learning budget", "answer_contains": ["30,000"]}
+{"id": "q18", "category": "direct", "question": "How much life insurance cover do I get?", "expected_doc": "benefits", "expected_section": "Life insurance", "answer_contains": ["3"]}
+{"id": "q19", "category": "direct", "question": "How much does the company contribute to provident fund?", "expected_doc": "benefits", "expected_section": "Provident fund", "answer_contains": ["12"]}
+{"id": "q20", "category": "paraphrase", "question": "What is the hotel limit in Mumbai?", "expected_doc": "expense-policy", "expected_section": "Domestic travel", "answer_contains": ["6,000"]}
+{"id": "q21", "category": "direct", "question": "Who has to approve international travel?", "expected_doc": "expense-policy", "expected_section": "International travel", "answer_contains": ["VP"]}
+{"id": "q22", "category": "direct", "question": "How long do I have to submit an expense claim?", "expected_doc": "expense-policy", "expected_section": "Claims", "answer_contains": ["30"]}
+{"id": "q23", "category": "direct", "question": "Can I claim alcohol as a business expense?", "expected_doc": "expense-policy", "expected_section": "Not reimbursable", "answer_contains": []}
+{"id": "q24", "category": "direct", "question": "Which claims need director approval?", "expected_doc": "expense-policy", "expected_section": "Claims", "answer_contains": ["25,000"]}
+{"id": "q25", "category": "direct", "question": "How do I raise a grievance about my manager?", "expected_doc": "grievance-process", "expected_section": "Raising a grievance", "answer_contains": []}
+{"id": "q26", "category": "direct", "question": "How long does HR take to investigate a grievance?", "expected_doc": "grievance-process", "expected_section": "What happens next", "answer_contains": ["30"]}
+{"id": "q27", "category": "paraphrase", "question": "Who do I report harassment to?", "expected_doc": "grievance-process", "expected_section": "Harassment complaints", "answer_contains": ["Internal Committee"]}
+{"id": "q28", "category": "version_trap", "question": "How many days a week do I work from office?", "expected_doc": "wfh-policy", "expected_section": "Office days", "answer_contains": ["3"], "answer_must_not_contain": ["2 days"]}
+{"id": "q29", "category": "version_trap", "question": "Which days are the core office days?", "expected_doc": "wfh-policy", "expected_section": "Office days", "answer_contains": ["Tuesday"], "answer_must_not_contain": ["own office days"]}
+{"id": "q30", "category": "version_trap", "question": "How many days can I work from another city?", "expected_doc": "wfh-policy", "expected_section": "Working from another city", "answer_contains": ["30"], "answer_must_not_contain": ["15 working"]}
+{"id": "q31", "category": "version_trap", "question": "How much is the home office allowance?", "expected_doc": "wfh-policy", "expected_section": "Equipment", "answer_contains": ["15,000"], "answer_must_not_contain": ["10,000"]}
+{"id": "q32", "category": "direct", "question": "Can my role be fully remote?", "expected_doc": "wfh-policy", "expected_section": "Fully remote roles", "answer_contains": ["director"]}
+{"id": "q33", "category": "restricted", "access_needed": "managers", "question": "When do performance reviews happen?", "expected_doc": "performance-review", "expected_section": "Cycle", "answer_contains": ["April"]}
+{"id": "q34", "category": "restricted", "access_needed": "managers", "question": "What do I need for a promotion case?", "expected_doc": "performance-review", "expected_section": "Promotion", "answer_contains": ["4"]}
+{"id": "q35", "category": "restricted", "access_needed": "managers", "question": "How long does a performance improvement plan run?", "expected_doc": "performance-review", "expected_section": "Performance improvement plan", "answer_contains": ["60"]}
+{"id": "q36", "category": "restricted", "access_needed": "hr", "question": "What is the salary band for L3?", "expected_doc": "salary-bands", "expected_section": "Overview", "answer_contains": ["14"]}
+{"id": "q37", "category": "restricted", "access_needed": "hr", "question": "What is the target bonus percentage?", "expected_doc": "salary-bands", "expected_section": "Bonus", "answer_contains": ["10"]}
+{"id": "q38", "category": "out_of_scope", "question": "What is the dress code?", "expected_doc": null, "expected_section": null, "answer_contains": []}
+{"id": "q39", "category": "out_of_scope", "question": "How do I reset my laptop password?", "expected_doc": null, "expected_section": null, "answer_contains": []}
+{"id": "q40", "category": "out_of_scope", "question": "What is the notice period if I resign?", "expected_doc": null, "expected_section": null, "answer_contains": []}
+{"id": "q41", "category": "hard", "question": "My wife is expecting. What leave can I take?", "expected_doc": "parental-leave", "expected_section": "Paternity leave", "answer_contains": ["10"]}
+{"id": "q42", "category": "hard", "question": "I want to relocate to Goa for a couple of months and keep working. Is that allowed?", "expected_doc": "wfh-policy", "expected_section": "Working from another city", "answer_contains": ["30"]}
+{"id": "q43", "category": "hard", "question": "What happens to my leftover earned leave when March ends?", "expected_doc": "leave-policy", "expected_section": "Carry forward and encashment", "answer_contains": ["10"]}
+{"id": "q44", "category": "hard", "question": "How much will the company pay if I join a Udemy course?", "expected_doc": "benefits", "expected_section": "Learning budget", "answer_contains": ["30,000"]}
+{"id": "q45", "category": "hard", "question": "Someone at work is harassing me. What should I do?", "expected_doc": "grievance-process", "expected_section": "Harassment complaints", "answer_contains": ["Internal Committee"]}
+{"id": "q46", "category": "hard", "question": "Is there a daily food allowance on business trips?", "expected_doc": "expense-policy", "expected_section": "Domestic travel", "answer_contains": ["1,200"]}
+{"id": "q47", "category": "hard", "question": "Will the company pay for my gym membership?", "expected_doc": "benefits", "expected_section": "Wellness", "answer_contains": ["6,000"]}
+{"id": "q48", "category": "hard", "question": "Can my parents be covered under my health plan?", "expected_doc": "benefits", "expected_section": "Health insurance", "answer_contains": []}
+{"id": "q49", "category": "hard", "question": "How soon will HR respond after I file a complaint?", "expected_doc": "grievance-process", "expected_section": "What happens next", "answer_contains": ["2"]}
+{"id": "q50", "category": "hard", "question": "Can I take earned leave in my first few months?", "expected_doc": "leave-policy", "expected_section": "Probation", "answer_contains": []}

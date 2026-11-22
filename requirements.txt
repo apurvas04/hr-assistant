@@ -1,0 +1,8 @@
+redis>=5
+sentence-transformers>=3
+PyYAML>=6
+numpy
+groq
+python-dotenv
+mcp<2
+pytest

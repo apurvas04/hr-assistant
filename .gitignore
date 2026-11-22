@@ -1,0 +1,24 @@
+# secrets: NEVER commit these
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# runtime data (traces contain user questions)
+traces/
+
+# editor / OS / temp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+
+.env
+.venv/
+traces/

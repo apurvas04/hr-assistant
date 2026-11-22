@@ -1,0 +1,915 @@
+{
+  "mode": "vector",
+  "include_archived": false,
+  "summary": {
+    "n_answerable": 47,
+    "doc_hit@1": 1.0,
+    "doc_hit@3": 1.0,
+    "doc_hit@5": 1.0,
+    "chunk_hit@1": 0.8723404255319149,
+    "chunk_hit@3": 0.9787234042553191,
+    "chunk_hit@5": 1.0,
+    "chunk_mrr": 0.9226950354609929,
+    "archived_in_topk_rate": 0.0,
+    "version_current_beats_archived": 1.0,
+    "avg_top_distance_in_scope": 0.39251434929829787,
+    "avg_top_distance_out_of_scope": 0.7418465415633333
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "category": "direct",
+      "question": "How many casual leave days do I get?",
+      "top_distance": 0.286602497101,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > Carry forward and encashment",
+        "leave-policy > Public holidays",
+        "wfh-policy > Office days",
+        "leave-policy > How to apply"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Types of leave"
+    },
+    {
+      "id": "q02",
+      "category": "direct",
+      "question": "How many earned leave days do I get per year?",
+      "top_distance": 0.36114269495,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > Public holidays",
+        "wfh-policy > Working from another city",
+        "wfh-policy > Office days",
+        "leave-policy > Carry forward and encashment"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Types of leave"
+    },
+    {
+      "id": "q03",
+      "category": "direct",
+      "question": "Do I need a medical certificate for sick leave?",
+      "top_distance": 0.506117463112,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > How to apply",
+        "benefits > Health insurance",
+        "leave-policy > Public holidays",
+        "parental-leave > Adoption leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Types of leave"
+    },
+    {
+      "id": "q04",
+      "category": "direct",
+      "question": "Can I carry forward sick leave?",
+      "top_distance": 0.496331810951,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > How to apply",
+        "leave-policy > Carry forward and encashment",
+        "parental-leave > Returning to work",
+        "leave-policy > Public holidays"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 3,
+      "expected": "leave-policy > Carry forward and encashment"
+    },
+    {
+      "id": "q05",
+      "category": "direct",
+      "question": "How many earned leave days can I carry forward?",
+      "top_distance": 0.33915501833,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > Carry forward and encashment",
+        "wfh-policy > Working from another city",
+        "leave-policy > Public holidays",
+        "leave-policy > How to apply"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 2,
+      "expected": "leave-policy > Carry forward and encashment"
+    },
+    {
+      "id": "q06",
+      "category": "paraphrase",
+      "question": "Can I cash out my unused leave at year end?",
+      "top_distance": 0.52080321312,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Carry forward and encashment",
+        "leave-policy > Types of leave",
+        "leave-policy > Public holidays",
+        "parental-leave > Returning to work",
+        "leave-policy > Probation"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Carry forward and encashment"
+    },
+    {
+      "id": "q07",
+      "category": "direct",
+      "question": "How many public holidays does the company have?",
+      "top_distance": 0.284260392189,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "leave-policy > Public holidays",
+        "wfh-policy > Office days",
+        "leave-policy > Carry forward and encashment",
+        "wfh-policy > Equipment",
+        "performance-review > Cycle"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Public holidays"
+    },
+    {
+      "id": "q08",
+      "category": "direct",
+      "question": "How far in advance do I need to apply for planned leave?",
+      "top_distance": 0.382316708565,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > How to apply",
+        "leave-policy > Types of leave",
+        "wfh-policy > Working from another city",
+        "parental-leave > Maternity leave",
+        "parental-leave > Paternity leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > How to apply"
+    },
+    {
+      "id": "q09",
+      "category": "paraphrase",
+      "question": "I was ill and forgot to apply. Can I still apply for sick leave after returning?",
+      "top_distance": 0.420430123806,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > How to apply",
+        "leave-policy > Types of leave",
+        "parental-leave > Returning to work",
+        "benefits > Life insurance",
+        "benefits > Health insurance"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > How to apply"
+    },
+    {
+      "id": "q10",
+      "category": "cross_section",
+      "question": "I'm still on probation. Can I take earned leave?",
+      "top_distance": 0.412947833538,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Probation",
+        "leave-policy > Types of leave",
+        "parental-leave > Overview",
+        "leave-policy > How to apply",
+        "parental-leave > Returning to work"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Probation"
+    },
+    {
+      "id": "q11",
+      "category": "direct",
+      "question": "How many weeks of maternity leave do I get?",
+      "top_distance": 0.234146118164,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "parental-leave > Maternity leave",
+        "parental-leave > Returning to work",
+        "parental-leave > Paternity leave",
+        "parental-leave > Adoption leave",
+        "leave-policy > Types of leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "parental-leave > Maternity leave"
+    },
+    {
+      "id": "q12",
+      "category": "direct",
+      "question": "How much paternity leave do new fathers get?",
+      "top_distance": 0.345428109169,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "parental-leave > Paternity leave",
+        "parental-leave > Adoption leave",
+        "parental-leave > Maternity leave",
+        "parental-leave > Returning to work",
+        "parental-leave > Overview"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "parental-leave > Paternity leave"
+    },
+    {
+      "id": "q13",
+      "category": "cross_section",
+      "question": "Does parental leave reduce my casual leave balance?",
+      "top_distance": 0.35218167305,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "parental-leave > Overview",
+        "parental-leave > Returning to work",
+        "parental-leave > Paternity leave",
+        "parental-leave > Adoption leave",
+        "parental-leave > Maternity leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "parental-leave > Overview"
+    },
+    {
+      "id": "q14",
+      "category": "direct",
+      "question": "I am adopting a child. How much leave can I take?",
+      "top_distance": 0.355233669281,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "parental-leave > Adoption leave",
+        "parental-leave > Maternity leave",
+        "parental-leave > Paternity leave",
+        "parental-leave > Returning to work",
+        "leave-policy > Types of leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "parental-leave > Adoption leave"
+    },
+    {
+      "id": "q15",
+      "category": "paraphrase",
+      "question": "Can I work shorter hours when I come back from maternity leave?",
+      "top_distance": 0.180502653122,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "parental-leave > Returning to work",
+        "parental-leave > Maternity leave",
+        "parental-leave > Paternity leave",
+        "parental-leave > Overview",
+        "wfh-policy > Working from another city"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "parental-leave > Returning to work"
+    },
+    {
+      "id": "q16",
+      "category": "direct",
+      "question": "What is the health insurance cover amount?",
+      "top_distance": 0.333557784557,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "benefits > Health insurance",
+        "benefits > Life insurance",
+        "wfh-policy > Equipment",
+        "benefits > Wellness",
+        "wfh-policy > Overview"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "benefits > Health insurance"
+    },
+    {
+      "id": "q17",
+      "category": "direct",
+      "question": "How much is the yearly learning budget?",
+      "top_distance": 0.373941838741,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "benefits > Learning budget",
+        "benefits > Wellness",
+        "wfh-policy > Equipment",
+        "expense-policy > Domestic travel",
+        "benefits > Health insurance"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "benefits > Learning budget"
+    },
+    {
+      "id": "q18",
+      "category": "direct",
+      "question": "How much life insurance cover do I get?",
+      "top_distance": 0.42307060957,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "benefits > Health insurance",
+        "benefits > Life insurance",
+        "wfh-policy > Equipment",
+        "benefits > Wellness",
+        "benefits > Learning budget"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 2,
+      "expected": "benefits > Life insurance"
+    },
+    {
+      "id": "q19",
+      "category": "direct",
+      "question": "How much does the company contribute to provident fund?",
+      "top_distance": 0.298418223858,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "benefits > Provident fund",
+        "benefits > Learning budget",
+        "benefits > Wellness",
+        "benefits > Health insurance",
+        "salary-bands > Bonus"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "benefits > Provident fund"
+    },
+    {
+      "id": "q20",
+      "category": "paraphrase",
+      "question": "What is the hotel limit in Mumbai?",
+      "top_distance": 0.471378743649,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "expense-policy > Domestic travel",
+        "wfh-policy > Equipment",
+        "leave-policy > Public holidays",
+        "expense-policy > Not reimbursable",
+        "wfh-policy > Working from another city"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "expense-policy > Domestic travel"
+    },
+    {
+      "id": "q21",
+      "category": "direct",
+      "question": "Who has to approve international travel?",
+      "top_distance": 0.293516755104,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "expense-policy > International travel",
+        "expense-policy > Not reimbursable",
+        "expense-policy > Domestic travel",
+        "expense-policy > Claims",
+        "wfh-policy > Fully remote roles"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "expense-policy > International travel"
+    },
+    {
+      "id": "q22",
+      "category": "direct",
+      "question": "How long do I have to submit an expense claim?",
+      "top_distance": 0.248504519463,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "expense-policy > Claims",
+        "grievance-process > What happens next",
+        "leave-policy > Carry forward and encashment",
+        "wfh-policy > Equipment",
+        "leave-policy > How to apply"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "expense-policy > Claims"
+    },
+    {
+      "id": "q23",
+      "category": "direct",
+      "question": "Can I claim alcohol as a business expense?",
+      "top_distance": 0.540503442287,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "expense-policy > Not reimbursable",
+        "expense-policy > Claims",
+        "expense-policy > Domestic travel",
+        "wfh-policy > Equipment",
+        "benefits > Wellness"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "expense-policy > Not reimbursable"
+    },
+    {
+      "id": "q24",
+      "category": "direct",
+      "question": "Which claims need director approval?",
+      "top_distance": 0.518572568893,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "expense-policy > Claims",
+        "wfh-policy > Fully remote roles",
+        "expense-policy > International travel",
+        "grievance-process > Harassment complaints",
+        "performance-review > Promotion"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "expense-policy > Claims"
+    },
+    {
+      "id": "q25",
+      "category": "direct",
+      "question": "How do I raise a grievance about my manager?",
+      "top_distance": 0.379821479321,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "grievance-process > Raising a grievance",
+        "grievance-process > Your protection",
+        "grievance-process > What happens next",
+        "grievance-process > Harassment complaints",
+        "performance-review > Promotion"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "grievance-process > Raising a grievance"
+    },
+    {
+      "id": "q26",
+      "category": "direct",
+      "question": "How long does HR take to investigate a grievance?",
+      "top_distance": 0.133733212948,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "grievance-process > What happens next",
+        "grievance-process > Your protection",
+        "grievance-process > Raising a grievance",
+        "leave-policy > How to apply",
+        "grievance-process > Harassment complaints"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "grievance-process > What happens next"
+    },
+    {
+      "id": "q27",
+      "category": "paraphrase",
+      "question": "Who do I report harassment to?",
+      "top_distance": 0.48410576582,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "grievance-process > Harassment complaints",
+        "grievance-process > Your protection",
+        "grievance-process > Raising a grievance",
+        "grievance-process > What happens next",
+        "expense-policy > Claims"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "grievance-process > Harassment complaints"
+    },
+    {
+      "id": "q28",
+      "category": "version_trap",
+      "question": "How many days a week do I work from office?",
+      "top_distance": 0.284579515457,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "wfh-policy > Office days",
+        "wfh-policy > Working from another city",
+        "wfh-policy > Equipment",
+        "leave-policy > Types of leave",
+        "leave-policy > Public holidays"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "wfh-policy > Office days",
+      "current_beats_archived": true
+    },
+    {
+      "id": "q29",
+      "category": "version_trap",
+      "question": "Which days are the core office days?",
+      "top_distance": 0.27664899826,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "wfh-policy > Office days",
+        "leave-policy > Public holidays",
+        "leave-policy > Carry forward and encashment",
+        "leave-policy > Types of leave",
+        "performance-review > Cycle"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "wfh-policy > Office days",
+      "current_beats_archived": true
+    },
+    {
+      "id": "q30",
+      "category": "version_trap",
+      "question": "How many days can I work from another city?",
+      "top_distance": 0.280762791634,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "wfh-policy > Working from another city",
+        "wfh-policy > Office days",
+        "leave-policy > Types of leave",
+        "wfh-policy > Equipment",
+        "leave-policy > How to apply"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "wfh-policy > Working from another city",
+      "current_beats_archived": true
+    },
+    {
+      "id": "q31",
+      "category": "version_trap",
+      "question": "How much is the home office allowance?",
+      "top_distance": 0.367500841618,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "wfh-policy > Equipment",
+        "benefits > Health insurance",
+        "benefits > Learning budget",
+        "wfh-policy > Office days",
+        "expense-policy > Domestic travel"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "wfh-policy > Equipment",
+      "current_beats_archived": true
+    },
+    {
+      "id": "q32",
+      "category": "direct",
+      "question": "Can my role be fully remote?",
+      "top_distance": 0.393511533737,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "wfh-policy > Fully remote roles",
+        "grievance-process > Your protection",
+        "wfh-policy > Working from another city",
+        "wfh-policy > Overview",
+        "performance-review > Calibration"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "wfh-policy > Fully remote roles"
+    },
+    {
+      "id": "q33",
+      "category": "restricted",
+      "question": "When do performance reviews happen?",
+      "top_distance": 0.317464709282,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "performance-review > Cycle",
+        "performance-review > Performance improvement plan",
+        "performance-review > Calibration",
+        "performance-review > Rating scale",
+        "performance-review > Promotion"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "performance-review > Cycle"
+    },
+    {
+      "id": "q34",
+      "category": "restricted",
+      "question": "What do I need for a promotion case?",
+      "top_distance": 0.542416870594,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "performance-review > Promotion",
+        "grievance-process > Your protection",
+        "grievance-process > What happens next",
+        "grievance-process > Raising a grievance",
+        "benefits > Learning budget"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "performance-review > Promotion"
+    },
+    {
+      "id": "q35",
+      "category": "restricted",
+      "question": "How long does a performance improvement plan run?",
+      "top_distance": 0.21272110939,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "performance-review > Performance improvement plan",
+        "performance-review > Cycle",
+        "performance-review > Rating scale",
+        "performance-review > Calibration",
+        "grievance-process > What happens next"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "performance-review > Performance improvement plan"
+    },
+    {
+      "id": "q36",
+      "category": "restricted",
+      "question": "What is the salary band for L3?",
+      "top_distance": 0.35428082943,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "salary-bands > Overview",
+        "salary-bands > Increments",
+        "salary-bands > Bonus",
+        "benefits > Life insurance",
+        "benefits > Wellness"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "salary-bands > Overview"
+    },
+    {
+      "id": "q37",
+      "category": "restricted",
+      "question": "What is the target bonus percentage?",
+      "top_distance": 0.318029940128,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "salary-bands > Bonus",
+        "salary-bands > Increments",
+        "benefits > Provident fund",
+        "performance-review > Promotion",
+        "benefits > Wellness"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "salary-bands > Bonus"
+    },
+    {
+      "id": "q38",
+      "category": "out_of_scope",
+      "question": "What is the dress code?",
+      "top_distance": 0.78121972084,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "salary-bands > Overview",
+        "salary-bands > Increments",
+        "salary-bands > Bonus",
+        "wfh-policy > Equipment",
+        "expense-policy > Domestic travel"
+      ]
+    },
+    {
+      "id": "q39",
+      "category": "out_of_scope",
+      "question": "How do I reset my laptop password?",
+      "top_distance": 0.908452451229,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "benefits > Wellness",
+        "benefits > Life insurance",
+        "benefits > Health insurance",
+        "parental-leave > Returning to work",
+        "salary-bands > Overview"
+      ]
+    },
+    {
+      "id": "q40",
+      "category": "out_of_scope",
+      "question": "What is the notice period if I resign?",
+      "top_distance": 0.535867452621,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > Probation",
+        "leave-policy > Public holidays",
+        "leave-policy > How to apply",
+        "grievance-process > What happens next"
+      ]
+    },
+    {
+      "id": "q41",
+      "category": "hard",
+      "question": "My wife is expecting. What leave can I take?",
+      "top_distance": 0.626196146011,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "parental-leave > Maternity leave",
+        "leave-policy > Types of leave",
+        "parental-leave > Returning to work",
+        "parental-leave > Adoption leave",
+        "parental-leave > Paternity leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 5,
+      "expected": "parental-leave > Paternity leave"
+    },
+    {
+      "id": "q42",
+      "category": "hard",
+      "question": "I want to relocate to Goa for a couple of months and keep working. Is that allowed?",
+      "top_distance": 0.64510345459,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "wfh-policy > Working from another city",
+        "wfh-policy > Fully remote roles",
+        "expense-policy > Not reimbursable",
+        "parental-leave > Returning to work",
+        "expense-policy > Domestic travel"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "wfh-policy > Working from another city"
+    },
+    {
+      "id": "q43",
+      "category": "hard",
+      "question": "What happens to my leftover earned leave when March ends?",
+      "top_distance": 0.52854847908,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Carry forward and encashment",
+        "leave-policy > Types of leave",
+        "leave-policy > Public holidays",
+        "leave-policy > Probation",
+        "leave-policy > How to apply"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "leave-policy > Carry forward and encashment"
+    },
+    {
+      "id": "q44",
+      "category": "hard",
+      "question": "How much will the company pay if I join a Udemy course?",
+      "top_distance": 0.476514220238,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "benefits > Learning budget",
+        "salary-bands > Overview",
+        "benefits > Wellness",
+        "expense-policy > Domestic travel",
+        "salary-bands > Bonus"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "benefits > Learning budget"
+    },
+    {
+      "id": "q45",
+      "category": "hard",
+      "question": "Someone at work is harassing me. What should I do?",
+      "top_distance": 0.634458601475,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "grievance-process > Your protection",
+        "grievance-process > Harassment complaints",
+        "grievance-process > Raising a grievance",
+        "grievance-process > What happens next",
+        "wfh-policy > Working from another city"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 2,
+      "expected": "grievance-process > Harassment complaints"
+    },
+    {
+      "id": "q46",
+      "category": "hard",
+      "question": "Is there a daily food allowance on business trips?",
+      "top_distance": 0.537618517876,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "expense-policy > Domestic travel",
+        "wfh-policy > Equipment",
+        "benefits > Wellness",
+        "expense-policy > Not reimbursable",
+        "leave-policy > Carry forward and encashment"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "expense-policy > Domestic travel"
+    },
+    {
+      "id": "q47",
+      "category": "hard",
+      "question": "Will the company pay for my gym membership?",
+      "top_distance": 0.381843745708,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "benefits > Wellness",
+        "salary-bands > Bonus",
+        "benefits > Health insurance",
+        "benefits > Provident fund",
+        "benefits > Life insurance"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "benefits > Wellness"
+    },
+    {
+      "id": "q48",
+      "category": "hard",
+      "question": "Can my parents be covered under my health plan?",
+      "top_distance": 0.432224035263,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "benefits > Health insurance",
+        "benefits > Life insurance",
+        "benefits > Wellness",
+        "parental-leave > Overview",
+        "expense-policy > Not reimbursable"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "benefits > Health insurance"
+    },
+    {
+      "id": "q49",
+      "category": "hard",
+      "question": "How soon will HR respond after I file a complaint?",
+      "top_distance": 0.340550601482,
+      "archived_in_topk": false,
+      "restricted_in_topk": true,
+      "retrieved": [
+        "grievance-process > What happens next",
+        "leave-policy > How to apply",
+        "performance-review > Performance improvement plan",
+        "expense-policy > Claims",
+        "grievance-process > Harassment complaints"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 1,
+      "expected": "grievance-process > What happens next"
+    },
+    {
+      "id": "q50",
+      "category": "hard",
+      "question": "Can I take earned leave in my first few months?",
+      "top_distance": 0.520474553108,
+      "archived_in_topk": false,
+      "restricted_in_topk": false,
+      "retrieved": [
+        "leave-policy > Types of leave",
+        "leave-policy > How to apply",
+        "leave-policy > Probation",
+        "parental-leave > Returning to work",
+        "parental-leave > Maternity leave"
+      ],
+      "doc_rank": 1,
+      "chunk_rank": 3,
+      "expected": "leave-policy > Probation"
+    }
+  ]
+}
