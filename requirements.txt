@@ -6,3 +6,4 @@ groq
 python-dotenv
 mcp<2
 pytest
+flask

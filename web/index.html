@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nimbus HR Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Nimbus HR Assistant</div>
+    <div class="who">
+      <span id="who-name"></span>
+      <span id="who-role" class="chip"></span>
+      <button id="switch" class="link" type="button">Switch user</button>
+    </div>
+  </header>
+
+  <main class="chat">
+    <div id="log" class="log" aria-live="polite">
+      <div class="msg bot">
+        <div class="bubble">Hi! Ask me about company HR policies or your own HR information,
+          such as leave balances. I only answer from documents you're allowed to see.</div>
+      </div>
+    </div>
+    <div id="suggestions" class="suggestions"></div>
+    <form id="form" class="composer" autocomplete="off">
+      <textarea id="input" rows="1" maxlength="1000" placeholder="Ask a question…" aria-label="Your question"></textarea>
+      <button id="send" type="submit">Send</button>
+    </form>
+    <p class="foot muted">Answers are generated from company policy documents and may contain mistakes. Check the cited sources.</p>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
