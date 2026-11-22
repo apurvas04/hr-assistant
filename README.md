@@ -1,4 +1,4 @@
-# Nimbus HR Assistant
+# Merh HR Assistant
 
 An internal HR assistant for a fictional company, built step by step with an evaluation at
 every stage. Employees ask questions in a chat page; the assistant answers from company
