@@ -136,7 +136,7 @@ if (typeof document !== "undefined") {
     $("input").addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("form").requestSubmit(); }
     });
-    $("switch").addEventListener("click", async () => {
+    $("signout").addEventListener("click", async () => {
       await fetch("/api/logout", { method: "POST" }); location.href = "/login";
     });
     $("input").focus();

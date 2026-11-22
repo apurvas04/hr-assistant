@@ -6,7 +6,11 @@ This is the "gateway" box of the architecture: it decides WHO is asking (a signe
 cookie) and enforces a per-user rate limit. The user id never comes from the request body,
 so a client cannot ask "as" someone else. The sign-in is a DEMO stand-in for company SSO.
 
+Sign-in is username + password checked against salted hashes in data/credentials.json
+(create accounts with:  python -m app.users_admin init). The server refuses to start without it.
+
 Settings: PORT (8000)  SESSION_SECRET (random per start)  RATE_LIMIT_PER_MIN (20)
+          LOGIN_MAX_FAILURES (5)  LOGIN_IP_MAX_FAILURES (20)  LOGIN_LOCKOUT_SECONDS (300)
 """
 import os
 import secrets
@@ -17,9 +21,11 @@ from datetime import timedelta
 from pathlib import Path
 
 from flask import Flask, jsonify, redirect, request, send_from_directory, session
+from werkzeug.security import check_password_hash, generate_password_hash
 
 from app.guardrails import MAX_CHARS, cited_numbers
-from app.identity import all_records, get_user
+from app.identity import get_user
+from app.users_admin import load_credentials
 
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 STATIC_FILES = {"app.js", "login.js", "style.css"}
@@ -44,6 +50,48 @@ class RateLimiter:
                 return max(1, int(self.window - (now - q[0])) + 1)
             q.append(now)
             return 0
+
+
+class FailureLimiter:
+    """Counts FAILED sign-ins per key (username or IP). After `max_failures` inside the window the
+    key is locked until the oldest failure expires. Checked BEFORE the password is, so a locked
+    account cannot be guessed at. (Behind a reverse proxy, remote_addr would be the proxy.)"""
+
+    def __init__(self, max_failures: int, window: float = 300.0):
+        self.max, self.window = max_failures, window
+        self.hits, self.lock = defaultdict(deque), threading.Lock()
+
+    def _prune(self, key, now):
+        q = self.hits[key]
+        while q and now - q[0] > self.window:
+            q.popleft()
+        if not q:
+            self.hits.pop(key, None)
+        return self.hits.get(key)
+
+    def wait(self, key: str) -> int:
+        now = time.monotonic()
+        with self.lock:
+            q = self._prune(key, now)
+            if q and len(q) >= self.max:
+                return max(1, int(self.window - (now - q[0])) + 1)
+            return 0
+
+    def fail(self, key: str) -> None:
+        now = time.monotonic()
+        with self.lock:
+            if len(self.hits) > 5000:                       # stop random usernames growing memory forever
+                for k in list(self.hits):
+                    self._prune(k, now)
+            self.hits[key].append(now)
+
+    def clear(self, key: str) -> None:
+        with self.lock:
+            self.hits.pop(key, None)
+
+
+# Checked against when the username is unknown, so "no such user" costs the same time as "wrong password".
+DUMMY_HASH = generate_password_hash("not-a-real-password")
 
 
 def public_view(out: dict, elapsed_ms: int) -> dict:
@@ -72,13 +120,19 @@ def _default_answer_fn(question, user):
     return answer(question, user)
 
 
-def create_app(answer_fn=None, rate_limit: int | None = None, secret: str | None = None) -> Flask:
+def create_app(answer_fn=None, rate_limit: int | None = None, secret: str | None = None,
+               credentials: dict | None = None, max_failures: int | None = None,
+               ip_max_failures: int | None = None) -> Flask:
     app = Flask(__name__, static_folder=None)
     app.secret_key = secret or os.getenv("SESSION_SECRET") or secrets.token_hex(32)
     app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE="Lax",
                       PERMANENT_SESSION_LIFETIME=timedelta(hours=SESSION_HOURS),
                       MAX_CONTENT_LENGTH=16 * 1024)
     answer_fn = answer_fn or _default_answer_fn
+    creds = credentials if credentials is not None else load_credentials()     # raises if there are no accounts
+    lockout = float(os.getenv("LOGIN_LOCKOUT_SECONDS", "300"))
+    user_failures = FailureLimiter(max_failures or int(os.getenv("LOGIN_MAX_FAILURES", "5")), lockout)
+    ip_failures = FailureLimiter(ip_max_failures or int(os.getenv("LOGIN_IP_MAX_FAILURES", "20")), lockout)
     limiter = RateLimiter(rate_limit if rate_limit is not None else int(os.getenv("RATE_LIMIT_PER_MIN", "20")))
 
     def current_user():
@@ -117,24 +171,39 @@ def create_app(answer_fn=None, rate_limit: int | None = None, secret: str | None
             return jsonify(error="Not found."), 404
         return send_from_directory(WEB_DIR, name)
 
-    # ---- sign-in (demo)
-    @app.get("/api/users")
-    def users():
-        return jsonify(users=[{"id": r["id"], "name": r["name"], "role": r["role"],
-                               "department": r["department"]} for r in all_records()])
-
+    # ---- sign-in
     @app.post("/api/login")
     def login():
-        if not request.is_json:
+        if not request.is_json:                  # also blocks cross-site HTML form posts
             return jsonify(error="Send JSON."), 415
-        uid = (request.get_json(silent=True) or {}).get("user_id")
-        try:
-            user = get_user(uid) if isinstance(uid, str) else None
-        except PermissionError:
-            user = None
+        body = request.get_json(silent=True) or {}
+        username, password = body.get("username"), body.get("password")
+        if (not isinstance(username, str) or not isinstance(password, str)
+                or not username.strip() or not password or len(username) > 200 or len(password) > 200):
+            return jsonify(error="Enter your username and password."), 400
+        name, ip = username.strip().lower(), request.remote_addr or "?"
+
+        wait = max(user_failures.wait(name), ip_failures.wait(ip))
+        if wait:                                 # locked: do not even look at the password
+            resp = jsonify(error=f"Too many failed attempts. Try again in {wait} seconds.")
+            resp.status_code, resp.headers["Retry-After"] = 429, str(wait)
+            return resp
+
+        record = creds.get(name)
+        password_ok = check_password_hash(record["password_hash"] if record else DUMMY_HASH, password)
+        user = None
+        if record and password_ok:
+            try:
+                user = get_user(record["user_id"])
+            except PermissionError:              # account exists but the employee was removed
+                user = None
         if user is None:
-            return jsonify(error="Unknown user."), 400
-        session.clear()
+            user_failures.fail(name)             # unknown names count too: no way to probe which exist
+            ip_failures.fail(ip)
+            return jsonify(error="Incorrect username or password."), 401   # same message either way
+
+        user_failures.clear(name)
+        session.clear()                          # fresh session on every sign-in
         session["uid"] = user.id
         session.permanent = True
         return jsonify(ok=True, user={"id": user.id, "name": user.name, "role": user.role})
@@ -200,10 +269,15 @@ def warm_up():
 if __name__ == "__main__":
     from dotenv import load_dotenv
     load_dotenv()
+    try:
+        app = create_app()                       # fail fast if there are no login accounts
+    except FileNotFoundError as e:
+        print(f"\n{e}")
+        raise SystemExit(1)
     if not os.getenv("SESSION_SECRET"):
         print("Note: no SESSION_SECRET set, so sign-ins reset whenever the server restarts.")
     print("Loading models...")
     warm_up()
     port = int(os.getenv("PORT", "8000"))
     print(f"Open http://127.0.0.1:{port}")
-    create_app().run(host="127.0.0.1", port=port, threaded=True)
+    app.run(host="127.0.0.1", port=port, threaded=True)

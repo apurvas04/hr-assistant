@@ -11,7 +11,7 @@ effective: 2026-01-01
 
 ## Raising a grievance
 
-- Use the HR portal or email hr-grievance@nimbus.example.
+- Use the HR portal or email hr-grievance@merh.example.
 - You can raise a grievance about your manager, a colleague, or a policy.
 
 ## What happens next
@@ -27,4 +27,4 @@ effective: 2026-01-01
 
 ## Harassment complaints
 
-Complaints of harassment go to the Internal Committee, not through the normal grievance route. Email ic@nimbus.example.
+Complaints of harassment go to the Internal Committee, not through the normal grievance route. Email ic@merh.example.

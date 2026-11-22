@@ -3,16 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nimbus HR Assistant · Sign in</title>
+  <title>Sign in · Merh HR Assistant</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
-  <main class="login">
-    <h1>Nimbus HR Assistant</h1>
-    <p class="muted">Demo sign-in. This stands in for company single sign-on: pick who you are,
-      and every answer, tool call and search is limited to what that person may see.</p>
-    <div id="users" class="user-grid" aria-live="polite">Loading…</div>
-    <p id="error" class="error" role="alert"></p>
+<body class="auth">
+  <main class="auth-card">
+    <h1>Merh HR Assistant</h1>
+    <p class="muted">Sign in with your Merh account.</p>
+
+    <form id="login-form" novalidate>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="email" inputmode="email" autocomplete="username"
+             placeholder="firstname.lastname@merh.example" autofocus required>
+
+      <label for="password">Password</label>
+      <div class="password-row">
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button id="toggle" class="link" type="button" aria-controls="password" aria-pressed="false">Show</button>
+      </div>
+
+      <p id="error" class="error" role="alert"></p>
+      <button id="submit" class="primary" type="submit">Sign in</button>
+    </form>
+
+    <p class="muted small">Forgot your password? Ask your administrator to reset it.</p>
   </main>
   <script src="/static/login.js"></script>
 </body>

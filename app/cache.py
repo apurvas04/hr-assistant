@@ -40,7 +40,7 @@ _STOP = {"a", "an", "the", "is", "are", "was", "were", "be", "been", "do", "does
          "if", "s"}
 _BENIGN = {"please", "kindly", "tell", "show", "explain", "know", "wondering", "hi", "hello", "hey",
            "thanks", "thank", "per", "year", "yearly", "annually", "annual", "exactly", "actually",
-           "just", "quick", "question", "company", "nimbus", "policy", "get", "entitled"}
+           "just", "quick", "question", "company", "merh", "policy", "get", "entitled"}
 
 
 def _content_words(text: str) -> set:

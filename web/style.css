@@ -62,3 +62,21 @@ sup.cite { background: var(--accent); color: var(--accent-text); border-radius: 
 .composer button { background: var(--accent); color: var(--accent-text); border: 0; border-radius: 12px; padding: 10px 18px; font-weight: 600; }
 .composer button:disabled { opacity: .5; cursor: default; }
 .foot { font-size: 12px; margin: 10px 0 0; }
+
+/* sign-in card */
+body.auth { display: grid; place-items: center; min-height: 100vh; padding: 20px; }
+.auth-card { width: 100%; max-width: 400px; background: var(--panel); border: 1px solid var(--line);
+             border-radius: 16px; padding: 28px 28px 22px; }
+.auth-card h1 { margin: 0 0 4px; font-size: 24px; }
+.auth-card form { display: flex; flex-direction: column; margin-top: 18px; }
+.auth-card label { font-size: 14px; font-weight: 600; margin: 12px 0 6px; }
+.auth-card input { font: inherit; width: 100%; padding: 10px 12px; border-radius: 10px;
+                   border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+.auth-card input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.password-row { display: flex; align-items: center; gap: 10px; }
+.password-row input { flex: 1; }
+.auth-card .error { margin: 12px 0 4px; }
+button.primary { background: var(--accent); color: var(--accent-text); border: 0; border-radius: 10px;
+                 padding: 11px 16px; font-weight: 600; margin-top: 8px; }
+button.primary:disabled { opacity: .6; cursor: default; }
+.small { font-size: 13px; margin: 16px 0 0; }

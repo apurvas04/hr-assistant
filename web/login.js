@@ -1,29 +1,45 @@
 "use strict";
-(async function () {
-  const grid = document.getElementById("users");
+(function () {
+  const form = document.getElementById("login-form");
+  const user = document.getElementById("username");
+  const pass = document.getElementById("password");
   const err = document.getElementById("error");
-  try {
-    const { users } = await (await fetch("/api/users")).json();
-    grid.textContent = "";
-    for (const u of users) {
-      const b = document.createElement("button");
-      b.type = "button"; b.className = "user-card";
-      const name = document.createElement("strong"); name.textContent = u.name;
-      const meta = document.createElement("span"); meta.textContent = u.role + " · " + u.department;
-      b.append(name, meta);
-      b.addEventListener("click", async () => {
-        err.textContent = "";
-        const res = await fetch("/api/login", {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ user_id: u.id }),
-        });
-        if (res.ok) location.href = "/";
-        else err.textContent = "Sign-in failed.";
-      });
-      grid.appendChild(b);
+  const submit = document.getElementById("submit");
+  const toggle = document.getElementById("toggle");
+
+  toggle.addEventListener("click", () => {
+    const show = pass.type === "password";
+    pass.type = show ? "text" : "password";
+    toggle.textContent = show ? "Hide" : "Show";
+    toggle.setAttribute("aria-pressed", String(show));
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    err.textContent = "";
+    if (!user.value.trim() || !pass.value) {
+      err.textContent = "Enter your username and password.";
+      (user.value.trim() ? pass : user).focus();
+      return;
     }
-  } catch (e) {
-    grid.textContent = "";
-    err.textContent = "Couldn't load users. Is the server running?";
-  }
+    submit.disabled = true;
+    submit.textContent = "Signing in…";
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: user.value.trim(), password: pass.value }),
+      });
+      if (res.ok) { location.href = "/"; return; }
+      let msg = "Sign-in failed. Please try again.";
+      try { msg = (await res.json()).error || msg; } catch (_) { /* keep default */ }
+      err.textContent = msg;
+      pass.value = "";
+      pass.focus();
+    } catch (_) {
+      err.textContent = "Couldn't reach the server. Is it still running?";
+    } finally {
+      submit.disabled = false;
+      submit.textContent = "Sign in";
+    }
+  });
 })();

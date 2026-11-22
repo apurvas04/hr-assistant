@@ -8,6 +8,7 @@ FILES = {
 .env
 .env.*
 !.env.example
+data/credentials.json
 
 # python
 .venv/
@@ -33,6 +34,7 @@ numpy
 groq
 python-dotenv
 mcp<2
+flask
 pytest
 """,
 
@@ -49,7 +51,7 @@ ANSWER_MODELS=openai/gpt-oss-120b,openai/gpt-oss-20b,qwen/qwen3.8-27b
 
 "README.md": """# HR Assistant
 
-An internal HR assistant for a fictional company ("Nimbus"): retrieval-augmented answers with
+An internal HR assistant for a fictional company ("Merh"): retrieval-augmented answers with
 citations, role-based access control, tool calling through an MCP server, guardrails, a
 semantic cache, a model router, versioned prompts and tracing.
 
@@ -62,6 +64,8 @@ python -m venv .venv
 pip install -r requirements.txt
 copy .env.example .env        (then put your Groq key in .env)
 python -m app.ingest
+python -m app.users_admin init   (creates logins; passwords are shown once)
+python -m app.server
 python -m app.answer --user E001 "How many casual leave days do I get?"
 ```
 

@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 
 MAX_CHARS = 1000
 
-REFUSAL = ("I can't help with that request. I can answer questions about Nimbus HR "
+REFUSAL = ("I can't help with that request. I can answer questions about Merh HR "
            "policies and your own HR information, so please try rephrasing.")
 TOO_LONG = f"That message is too long. Please ask a shorter question (under {MAX_CHARS} characters)."
 EMPTY = "Please type a question."

@@ -87,13 +87,13 @@ def test_blocked_reason_is_reported():
 
 
 # ------------------------------------------------------------------ output
-HITS = [{"text": "Contact the Internal Committee at ic@nimbus.example within 3 months."},
+HITS = [{"text": "Contact the Internal Committee at ic@merh.example within 3 months."},
         {"text": "Casual leave is 8 days per year."}]
 
 
 def test_email_from_the_policy_is_allowed():
-    ans, acts = check_output("Email ic@nimbus.example [1].", HITS, [])
-    assert "ic@nimbus.example" in ans and acts == []
+    ans, acts = check_output("Email ic@merh.example [1].", HITS, [])
+    assert "ic@merh.example" in ans and acts == []
 
 
 @pytest.mark.parametrize("pii,kind", [
